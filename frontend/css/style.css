@@ -208,6 +208,7 @@ h2 {
     margin-top: 2rem;
     font-family: "LCARS", Arial, sans-serif;
     letter-spacing: 0.10em;
+    font-weight: 400;
 }
 
 .media-grid {
@@ -283,6 +284,17 @@ h2 {
     background: var(--background);
     border: 2px solid var(--panel);
     border-radius: 8px;
+    font-family: "LCARS", Arial, sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+}
+
+#media-query-text {
+    font-family: "LCARS", Arial, sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+    line-height: 1.6;
 }
 
 /* Fußzeile */
