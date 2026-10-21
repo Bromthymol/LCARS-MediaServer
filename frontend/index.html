@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCARS Media System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <div class="lcars-app">
+        <header class="lcars-header">
+            <div class="lcars-brand">
+                <span class="brand-label">LCARS</span>
+                <span class="brand-subtitle">MEDIA SYSTEM</span>
+            </div>
+
+            <div class="header-panel">
+                <span>PERSONAL MEDIA DATABASE</span>
+                <span class="system-status">SYSTEM ONLINE</span>
+            </div>
+        </header>
+
+        <div class="lcars-layout">
+            <nav class="lcars-navigation">
+                <button class="nav-button active" data-section="home">HOME</button>
+                <button class="nav-button" data-section="movies">MOVIES</button>
+                <button class="nav-button" data-section="series">SERIES</button>
+                <button class="nav-button" data-section="music">MUSIC</button>
+                <button class="nav-button" data-section="photos">PHOTOS</button>
+                <button class="nav-button" data-section="search">SEARCH</button>
+            </nav>
+
+            <main class="lcars-content">
+                <section id="home" class="content-section">
+                    <h1>WELCOME BACK</h1>
+                    <p class="section-description">
+                        Personal media archive · LCARS interface prototype
+                    </p>
+
+                    <div class="feature-panel">
+                        <span class="panel-label">SYSTEM MESSAGE 001</span>
+                        <h2>ALL SYSTEMS OPERATIONAL</h2>
+                        <p>
+                            Your personal media library is waiting.
+                            Select a section to begin.
+                        </p>
+                    </div>
+
+                    <h2 class="section-heading">MEDIA ARCHIVE</h2>
+
+                    <div class="media-grid">
+                        <button class="media-card" data-section="movies">
+                            <span class="media-number">01</span>
+                            <span class="media-title">MOVIES</span>
+                            <span class="media-description">Feature films</span>
+                        </button>
+
+                        <button class="media-card" data-section="series">
+                            <span class="media-number">02</span>
+                            <span class="media-title">SERIES</span>
+                            <span class="media-description">Episodes & seasons</span>
+                        </button>
+
+                        <button class="media-card" data-section="music">
+                            <span class="media-number">03</span>
+                            <span class="media-title">MUSIC</span>
+                            <span class="media-description">Audio archive</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section id="movies" class="content-section" hidden>
+                    <h1>MOVIE DATABASE</h1>
+                    <p>Feature film archive — awaiting Jellyfin connection.</p>
+                </section>
+
+                <section id="photos" class="content-section" hidden>
+                    <h1>PHOTO ARCHIVE</h1>
+                    <p class="section-description">
+                        Personal image database · LCARS visual archive
+                    </p>
+
+                    <div class="feature-panel">
+                        <span class="panel-label">VISUAL DATABASE</span>
+                        <h2>PHOTO LIBRARY</h2>
+                        <p>
+                            Your personal photo collection will be available here.
+                            Select an album to explore your images.
+                        </p>
+                    </div>
+
+                    <h2 class="section-heading">PHOTO COLLECTIONS</h2>
+
+                    <div class="media-grid">
+                        <button class="media-card" type="button">
+                            <span class="media-number">01</span>
+                            <span class="media-title">ALBUMS</span>
+                            <span class="media-description">Browse photo albums</span>
+                        </button>
+
+                        <button class="media-card" type="button">
+                            <span class="media-number">02</span>
+                            <span class="media-title">RECENT</span>
+                            <span class="media-description">Recently added photos</span>
+                        </button>
+
+                        <button class="media-card" type="button">
+                            <span class="media-number">03</span>
+                            <span class="media-title">FAVORITES</span>
+                            <span class="media-description">Favorite images</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section id="series" class="content-section" hidden>
+                    <h1>SERIES DATABASE</h1>
+                    <p>Television archive — awaiting Jellyfin connection.</p>
+                </section>
+
+                <section id="music" class="content-section" hidden>
+                    <h1>AUDIO ARCHIVE</h1>
+                    <p>Music library — awaiting Jellyfin connection.</p>
+                </section>
+
+                <section id="search" class="content-section" hidden>
+                    <h1>DATABASE SEARCH</h1>
+                    <label for="media-search">SEARCH QUERY</label>
+                    <input id="media-search" type="search"
+                           placeholder="Enter search term...">
+                    <p>Search will be connected to Jellyfin in a later phase.</p>
+                </section>
+
+                <footer class="lcars-footer">
+                    LCARS MEDIA SYSTEM <span>PROTOTYPE 0.1</span>
+                </footer>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

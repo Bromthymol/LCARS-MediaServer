@@ -1,0 +1,284 @@
+
+:root {
+    --background: #090b12;
+    --panel: #b5a0d4;
+    --orange: #e99b43;
+    --yellow: #f0c66e;
+    --blue: #8eb6d8;
+    --text: #f5f0fa;
+    --dark-text: #17131e;
+    --spacing: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: "Arial", sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.lcars-app {
+    max-width: 1600px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.lcars-header {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    margin-bottom: 1rem;
+}
+
+.lcars-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 190px;
+    padding: 1rem 1.5rem;
+    background: var(--orange);
+    color: var(--dark-text);
+    border-radius: 36px 8px 8px 8px;
+}
+
+.brand-label {
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
+
+.brand-subtitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.header-panel {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: var(--panel);
+    color: var(--dark-text);
+    border-radius: 8px 36px 8px 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.system-status {
+    padding: 0.6rem 1rem;
+    background: var(--yellow);
+    border-radius: 20px;
+}
+
+.lcars-layout {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.lcars-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.nav-button {
+    min-height: 54px;
+    padding: 0.9rem 1rem;
+    background: var(--panel);
+    color: var(--dark-text);
+    border: 0;
+    border-radius: 22px 6px 6px 22px;
+    font-weight: 800;
+    text-align: left;
+    transition: filter 150ms ease, transform 150ms ease;
+}
+
+.nav-button:hover,
+.media-card:hover {
+    filter: brightness(1.15);
+    transform: translateX(3px);
+}
+
+.nav-button.active {
+    background: var(--orange);
+}
+
+.lcars-content {
+    min-width: 0;
+    padding: 1.5rem;
+    background: #11141e;
+    border-radius: 8px 8px 8px 36px;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: 0.08em;
+}
+
+h2 {
+    letter-spacing: 0.06em;
+}
+
+.section-description {
+    color: #b9b9ca;
+}
+
+.feature-panel {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    color: var(--dark-text);
+    background: var(--panel);
+    border-radius: 8px 32px 8px 8px;
+}
+
+.panel-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.feature-panel h2 {
+    margin-bottom: 0.5rem;
+}
+
+.section-heading {
+    margin-top: 2rem;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.media-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    min-height: 160px;
+    padding: 1.2rem;
+    background: var(--blue);
+    color: var(--dark-text);
+    border: 0;
+    border-radius: 8px 28px 8px 8px;
+    text-align: left;
+    transition: filter 150ms ease, transform 150ms ease;
+}
+
+.media-card:nth-child(2) {
+    background: var(--orange);
+}
+
+.media-card:nth-child(3) {
+    background: var(--yellow);
+}
+
+.media-number {
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.media-title {
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.media-description {
+    font-size: 0.85rem;
+}
+
+.content-section p {
+    line-height: 1.6;
+}
+
+#media-search {
+    display: block;
+    width: 100%;
+    margin-top: 0.6rem;
+    padding: 1rem;
+    color: var(--text);
+    background: var(--background);
+    border: 2px solid var(--panel);
+    border-radius: 8px;
+}
+
+.lcars-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--panel);
+    color: #b9b9ca;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 760px) {
+    .lcars-app {
+        padding: 0.75rem;
+    }
+
+    .lcars-header {
+        flex-direction: column;
+    }
+
+    .lcars-brand {
+        min-width: 0;
+        border-radius: 28px 8px 8px 8px;
+    }
+
+    .header-panel {
+        flex-wrap: wrap;
+        border-radius: 8px 24px 8px 8px;
+    }
+
+    .lcars-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .lcars-navigation {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .nav-button {
+        border-radius: 18px 6px 6px 18px;
+    }
+
+    .lcars-content {
+        padding: 1rem;
+    }
+
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .media-card {
+        min-height: 110px;
+    }
+}
