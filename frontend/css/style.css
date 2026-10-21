@@ -107,14 +107,18 @@ button {
 }
 
 .nav-button {
-    min-height: 54px;
+    min-height: 58px;
     padding: 0.9rem 1rem;
     background: var(--panel);
     color: var(--dark-text);
     border: 0;
-    font-family: "LCARS", Arial, sans-serif;
     border-radius: 22px 6px 6px 22px;
+
+    font-family: "LCARS", Arial, sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.10em;
     font-weight: 800;
+
     text-align: left;
     transition: filter 150ms ease, transform 150ms ease;
 }
