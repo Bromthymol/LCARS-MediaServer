@@ -1031,7 +1031,7 @@ body.picard-theme .phaser-energy span:nth-child(2n) {
 }
 
 @keyframes phaserSweep {
-    from { left: 15%; }:root[data-theme="picard"]
+    from { left: 15%; }
     to { left: 85%; }
 }
 
