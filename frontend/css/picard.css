@@ -1,0 +1,1145 @@
+/*
+ * LCARS Media System — modern Picard-inspired theme
+ * Loaded alongside style.css; classic TNG remains the default.
+ */
+body.picard-theme {
+    --background: #070b12;
+    --panel: #142331;
+    --orange: #e3a36c;
+    --yellow: #e6c57b;
+    --blue: #3aa9c6;
+    --text: #e3edf5;
+    --dark-text: #09121a;
+    --picard-muted: #7893a7;
+    --picard-cyan: #54d9ed;
+    --picard-amber: #e5a36c;
+    --picard-line: rgba(84, 217, 237, .28);
+    --picard-panel: rgba(12, 23, 34, .96);
+}
+
+body.picard-theme body {
+    background:
+        radial-gradient(ellipse at 78% 4%, rgba(28, 91, 117, .16), transparent 36rem),
+        linear-gradient(135deg, #070b12 0%, #0a111b 55%, #070b12 100%);
+    color: var(--text);
+    font-family: "Arial", sans-serif;
+}
+
+body.picard-theme .lcars-app {
+    max-width: 1760px;
+}
+
+body.picard-theme .lcars-brand {
+    background: linear-gradient(145deg, #dba06d, #9b6d4c);
+    color: #101923;
+    border-radius: 24px 5px 5px 5px;
+    box-shadow: inset 0 1px rgba(255,255,255,.25), 0 0 28px rgba(218,145,87,.08);
+}
+
+body.picard-theme .brand-label {
+    font-family: "LCARS", Arial, sans-serif;
+    letter-spacing: .08em;
+}
+
+body.picard-theme .brand-subtitle {
+    font-family: Arial, sans-serif;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+}
+
+body.picard-theme .header-panel {
+    align-items: center;
+    background: linear-gradient(120deg, rgba(19, 38, 53, .96), rgba(13, 24, 36, .96));
+    color: #e5eef7;
+    border: 1px solid rgba(96, 160, 186, .3);
+    border-radius: 5px 24px 5px 5px;
+    box-shadow: inset 0 1px rgba(255,255,255,.035);
+    font-family: Arial, sans-serif;
+    letter-spacing: .08em;
+}
+
+body.picard-theme .header-identification,
+body.picard-theme .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+body.picard-theme .header-identification {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .4rem;
+}
+
+body.picard-theme .header-kicker,
+body.picard-theme .theme-switch-caption {
+    color: var(--picard-muted);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+}
+
+body.picard-theme .header-main-label {
+    font-size: .9rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+}
+
+body.picard-theme .header-controls {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+body.picard-theme .theme-control {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    padding: .35rem .7rem;
+    border: 1px solid rgba(84, 217, 237, .25);
+    border-radius: 4px;
+    background: rgba(3, 11, 18, .45);
+}
+
+body.picard-theme .theme-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+body.picard-theme .theme-switch input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+body.picard-theme .switch-track {
+    display: flex;
+    align-items: center;
+    width: 42px;
+    height: 23px;
+    padding: 3px;
+    border: 1px solid #42677a;
+    border-radius: 20px;
+    background: #101b27;
+    transition: background .2s ease, border-color .2s ease;
+}
+
+body.picard-theme .switch-knob {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #7d96a8;
+    box-shadow: 0 0 7px rgba(84, 217, 237, .15);
+    transition: transform .2s ease, background .2s ease;
+}
+
+body.picard-theme .theme-switch input:checked + .switch-track {
+    background: #123442;
+    border-color: var(--picard-cyan);
+}
+
+body.picard-theme .theme-switch input:checked + .switch-track .switch-knob {
+    background: var(--picard-cyan);
+    transform: translateX(18px);
+    box-shadow: 0 0 10px rgba(84, 217, 237, .45);
+}
+
+body.picard-theme .theme-switch input:focus-visible + .switch-track {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+body.picard-theme .theme-switch-label {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    color: #dbe8f2;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    white-space: nowrap;
+}
+
+body.picard-theme .system-status {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: rgba(20, 61, 65, .75);
+    border: 1px solid rgba(94, 220, 194, .36);
+    border-radius: 3px;
+    color: #8fe4d2;
+    font-family: Arial, sans-serif;
+    font-size: .66rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    white-space: nowrap;
+}
+
+body.picard-theme .status-light,
+body.picard-theme .diagnostic-state span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #71e2c5;
+    box-shadow: 0 0 9px rgba(113, 226, 197, .7);
+}
+
+body.picard-theme .lcars-layout {
+    grid-template-columns: 190px minmax(0, 1fr);
+    align-items: start;
+}
+
+body.picard-theme .lcars-navigation {
+    position: sticky;
+    top: 1rem;
+    gap: .45rem;
+}
+
+body.picard-theme .nav-button {
+    min-height: 50px;
+    background: #162736;
+    border: 1px solid rgba(83, 151, 179, .24);
+    border-left: 3px solid #315d73;
+    border-radius: 3px 12px 3px 3px;
+    color: #b9cedd;
+    font-family: Arial, sans-serif;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-align: left;
+    transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+body.picard-theme .nav-button:hover,
+body.picard-theme .media-card:hover {
+    filter: none;
+    transform: translateX(3px);
+    border-color: rgba(84, 217, 237, .65);
+}
+
+body.picard-theme .nav-button.active {
+    background: linear-gradient(100deg, rgba(31, 113, 137, .5), rgba(18, 43, 57, .92));
+    border-left-color: var(--picard-cyan);
+    color: #e5fbff;
+    box-shadow: inset 0 0 18px rgba(84, 217, 237, .06);
+}
+
+body.picard-theme .lcars-content {
+    background: linear-gradient(150deg, rgba(13, 23, 34, .96), rgba(8, 15, 24, .98));
+    border: 1px solid rgba(71, 125, 153, .28);
+    border-radius: 4px 4px 4px 24px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .2), inset 0 1px rgba(255,255,255,.025);
+}
+
+body.picard-theme h1,
+body.picard-theme h2,
+body.picard-theme .section-description,
+body.picard-theme .section-heading,
+body.picard-theme .panel-label {
+    font-family: Arial, sans-serif;
+}
+
+body.picard-theme h1 {
+    color: #edf7ff;
+    font-size: clamp(1.65rem, 3vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: .12em;
+}
+
+body.picard-theme h2 {
+    color: #d9eaf5;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+
+body.picard-theme .section-description {
+    color: #89a4b8;
+    font-size: .95rem;
+    letter-spacing: .04em;
+}
+
+body.picard-theme .feature-panel {
+    background: linear-gradient(100deg, #132c3a, #13212e);
+    color: #d9eaf5;
+    border: 1px solid rgba(84, 217, 237, .24);
+    border-left: 3px solid var(--picard-cyan);
+    border-radius: 3px 14px 3px 3px;
+}
+
+body.picard-theme .feature-panel h2 {
+    color: var(--picard-cyan);
+}
+
+body.picard-theme .feature-panel p,
+body.picard-theme .content-section p {
+    color: #b0c2d0;
+    font-family: Arial, sans-serif;
+    font-size: .95rem;
+    letter-spacing: .01em;
+}
+
+body.picard-theme .panel-label {
+    color: #85a7ba;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+}
+
+body.picard-theme .section-heading {
+    color: #83d7e7;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+}
+
+body.picard-theme .media-card {
+    min-height: 145px;
+    background: linear-gradient(145deg, #1c4254, #142837);
+    color: #e0eef6;
+    border: 1px solid rgba(84, 217, 237, .25);
+    border-radius: 3px 14px 3px 3px;
+    text-align: left;
+}
+
+body.picard-theme .media-card:nth-child(2) {
+    background: linear-gradient(145deg, #4c382d, #2c2524);
+    border-color: rgba(229, 163, 108, .3);
+}
+
+body.picard-theme .media-card:nth-child(3) {
+    background: linear-gradient(145deg, #3c3b2e, #242a29);
+    border-color: rgba(230, 197, 123, .3);
+}
+
+body.picard-theme .media-number {
+    color: var(--picard-cyan);
+    font-family: monospace;
+    font-size: .78rem;
+    letter-spacing: .16em;
+}
+
+body.picard-theme .media-title {
+    color: #e5f2fa;
+    font-family: Arial, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+
+body.picard-theme .media-description {
+    color: #9eb7c8;
+    font-family: Arial, sans-serif;
+    font-size: .82rem;
+    letter-spacing: .02em;
+}
+
+body.picard-theme #media-search {
+    background: #080e16;
+    border: 1px solid #37677c;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+}
+
+body.picard-theme #media-query-text {
+    color: #8fd8e5;
+    font-family: Arial, sans-serif;
+    font-size: .8rem;
+    letter-spacing: .14em;
+}
+
+body.picard-theme .lcars-footer {
+    border-top: 1px solid rgba(84, 217, 237, .3);
+    color: #7893a7;
+    font-family: Arial, sans-serif;
+    font-size: .7rem;
+}
+
+/* Technical system panels */
+body.picard-theme .diagnostics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.6rem 0 2.2rem;
+}
+
+body.picard-theme .diagnostic-panel {
+    min-width: 0;
+    overflow: hidden;
+    padding: 1rem;
+    background:
+        linear-gradient(145deg, rgba(17, 35, 49, .96), rgba(8, 17, 27, .98));
+    border: 1px solid rgba(84, 217, 237, .26);
+    border-radius: 3px 16px 3px 3px;
+    box-shadow: inset 0 1px rgba(255,255,255,.03);
+}
+
+body.picard-theme .phaser-panel {
+    border-color: rgba(229, 163, 108, .3);
+}
+
+body.picard-theme .diagnostic-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .7rem;
+    margin-bottom: .8rem;
+}
+
+body.picard-theme .diagnostic-index {
+    color: #6e91a7;
+    font-family: monospace;
+    font-size: .62rem;
+    letter-spacing: .12em;
+}
+
+body.picard-theme .diagnostic-heading h2 {
+    margin: .35rem 0 0;
+    color: #c9f5fc;
+    font-size: .9rem;
+}
+
+body.picard-theme .phaser-panel .diagnostic-heading h2 {
+    color: #f0c095;
+}
+
+body.picard-theme .diagnostic-state {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    color: #8ce4d0;
+    font-family: monospace;
+    font-size: .6rem;
+    letter-spacing: .08em;
+    white-space: nowrap;
+}
+
+body.picard-theme .diagnostic-state.standby {
+    color: #efbd8c;
+}
+
+body.picard-theme .diagnostic-state.standby span {
+    background: #e5a36c;
+    box-shadow: 0 0 8px rgba(229, 163, 108, .5);
+}
+
+body.picard-theme .schematic-frame {
+    position: relative;
+    min-width: 0;
+    padding: .4rem .3rem 1.8rem;
+    background:
+        linear-gradient(rgba(63, 137, 161, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(63, 137, 161, .035) 1px, transparent 1px),
+        rgba(3, 10, 17, .52);
+    background-size: 12px 12px;
+    border: 1px solid rgba(71, 135, 160, .18);
+}
+
+body.picard-theme .phaser-frame {
+    background:
+        linear-gradient(rgba(176, 119, 76, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(176, 119, 76, .035) 1px, transparent 1px),
+        rgba(3, 10, 17, .52);
+    background-size: 12px 12px;
+    border-color: rgba(176, 119, 76, .2);
+}
+
+body.picard-theme .warp-schematic,
+body.picard-theme .phaser-schematic {
+    display: block;
+    width: 100%;
+    max-height: 320px;
+    margin: 0 auto;
+}
+
+body.picard-theme .schematic-grid {
+    fill: none;
+    stroke: rgba(76, 143, 165, .13);
+    stroke-width: .7;
+}
+
+body.picard-theme .phaser-schematic .schematic-grid {
+    stroke: rgba(174, 123, 83, .13);
+}
+
+body.picard-theme .warp-coil-lines {
+    animation: warpPulse 3.5s ease-in-out infinite;
+}
+
+body.picard-theme .warp-core-rings {
+    transform-origin: 150px 165px;
+    animation: coreDrift 14s linear infinite;
+}
+
+body.picard-theme .phaser-emitters rect {
+    fill: #e5a36c;
+    fill-opacity: .62;
+    stroke: #ffcf9e;
+    stroke-width: .8;
+    animation: emitterPulse 4s ease-in-out infinite;
+}
+
+body.picard-theme .phaser-emitters rect:nth-child(even) {
+    animation-delay: -2s;
+}
+
+body.picard-theme .schematic-axis-label {
+    position: absolute;
+    left: .55rem;
+    color: #57849a;
+    font-family: monospace;
+    font-size: .55rem;
+    letter-spacing: .08em;
+}
+
+body.picard-theme .phaser-frame .schematic-axis-label {
+    color: #a37a5a;
+}
+
+body.picard-theme .axis-top {
+    top: .45rem;
+}
+
+body.picard-theme .axis-bottom {
+    bottom: .45rem;
+}
+
+body.picard-theme .diagnostic-readouts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .45rem;
+    margin-top: .75rem;
+}
+
+body.picard-theme .diagnostic-readouts div {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    min-width: 0;
+    padding: .55rem .45rem;
+    background: rgba(2, 9, 15, .42);
+    border-top: 1px solid rgba(84, 217, 237, .18);
+}
+
+body.picard-theme .phaser-panel .diagnostic-readouts div {
+    border-top-color: rgba(229, 163, 108, .22);
+}
+
+body.picard-theme .diagnostic-readouts span {
+    color: #7594a8;
+    font-family: monospace;
+    font-size: .52rem;
+    letter-spacing: .05em;
+}
+
+body.picard-theme .diagnostic-readouts strong {
+    overflow-wrap: anywhere;
+    color: #b7f5ff;
+    font-family: monospace;
+    font-size: .75rem;
+    font-weight: 500;
+}
+
+body.picard-theme .phaser-panel .diagnostic-readouts strong {
+    color: #f2c69e;
+}
+
+body.picard-theme .diagnostic-readouts small {
+    font-size: .58rem;
+}
+
+body.picard-theme .readout-bar {
+    height: 3px;
+    margin-top: .7rem;
+    background: #142c38;
+}
+
+body.picard-theme .readout-bar span {
+    display: block;
+    height: 100%;
+    background: var(--picard-cyan);
+    box-shadow: 0 0 8px rgba(84, 217, 237, .6);
+}
+
+body.picard-theme .readout-bar.amber {
+    background: #30251e;
+}
+
+body.picard-theme .readout-bar.amber span {
+    background: var(--picard-amber);
+    box-shadow: 0 0 8px rgba(229, 163, 108, .4);
+}
+
+@keyframes warpPulse {
+    0%, 100% { opacity: .55; }
+    50% { opacity: 1; }
+}
+
+@keyframes coreDrift {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes emitterPulse {
+    0%, 100% { fill-opacity: .48; }
+    50% { fill-opacity: .95; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.picard-theme *,
+    body.picard-theme *::before,
+    body.picard-theme *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+@media (max-width: 980px) {
+    body.picard-theme .header-panel {
+        align-items: flex-start;
+    }
+
+    body.picard-theme .header-controls {
+        align-items: flex-start;
+    }
+
+    body.picard-theme .diagnostics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body.picard-theme .warp-schematic,
+    body.picard-theme .phaser-schematic {
+        max-height: 360px;
+    }
+}
+
+@media (max-width: 760px) {
+    body.picard-theme .header-panel {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    body.picard-theme .header-controls {
+        justify-content: space-between;
+    }
+
+    body.picard-theme .lcars-navigation {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    body.picard-theme .nav-button {
+        min-height: 46px;
+        padding: .75rem;
+        font-size: .7rem;
+    }
+
+    body.picard-theme .diagnostic-panel {
+        padding: .75rem;
+    }
+
+    body.picard-theme .diagnostic-readouts {
+        gap: .25rem;
+    }
+
+    body.picard-theme .diagnostic-readouts div {
+        padding: .45rem .3rem;
+    }
+
+    body.picard-theme .diagnostic-readouts span {
+        font-size: .47rem;
+    }
+
+    body.picard-theme .diagnostic-readouts strong {
+        font-size: .67rem;
+    }
+}
+
+
+/* =========================================
+   PICARD: TECHNICAL SIDE CONSOLES
+   ========================================= */
+
+.lcars-left-column {
+    display: contents;
+}
+
+.warp-panel,
+.phaser-panel {
+    display: none;
+}
+
+body.picard-theme .lcars-layout {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr) 92px;
+    align-items: start;
+    gap: 1rem;
+}
+
+body.picard-theme .lcars-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    min-width: 0;
+}
+
+body.picard-theme .warp-panel,
+body.picard-theme .phaser-panel {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    padding: .65rem;
+    background: linear-gradient(160deg, #132633, #070d15 75%);
+    border: 1px solid rgba(84, 217, 237, .35);
+    border-radius: 3px 13px 3px 3px;
+    color: #d8edf5;
+    font-family: Arial, sans-serif;
+    box-shadow: inset 0 0 22px rgba(40, 150, 180, .05);
+}
+
+body.picard-theme .warp-panel .diagnostic-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .4rem;
+    margin-bottom: .6rem;
+}
+
+body.picard-theme .diagnostic-index {
+    color: #6d9aaf;
+    font:  .55rem monospace;
+    letter-spacing: .08em;
+}
+
+body.picard-theme .warp-panel h2,
+body.picard-theme .phaser-panel h2 {
+    margin: .3rem 0;
+    color: #8cecff;
+    font-size: .8rem;
+    letter-spacing: .12em;
+}
+
+body.picard-theme .diagnostic-state {
+    color: #78e7cb;
+    font: .55rem monospace;
+    letter-spacing: .05em;
+}
+
+body.picard-theme .diagnostic-state > span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: .2rem;
+    border-radius: 50%;
+    background: #78e7cb;
+    box-shadow: 0 0 8px #78e7cb;
+    animation: statusBlink 2s ease-in-out infinite;
+}
+
+/* Warp core visual */
+
+body.picard-theme .warp-visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 3 / 4;
+    min-height: 135px;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(67, 159, 185, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(67, 159, 185, .08) 1px, transparent 1px),
+        #050c13;
+    background-size: 10px 10px;
+    border: 1px solid rgba(84, 217, 237, .22);
+}
+
+body.picard-theme .warp-core {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 35%;
+    aspect-ratio: 1;
+    border: 2px solid #8cecff;
+    border-radius: 50%;
+    background: radial-gradient(circle, #eaffff 0%, #55d9ed 12%, #12627c 42%, #07121f 72%);
+    box-shadow: 0 0 12px #54d9ed, 0 0 30px rgba(84, 217, 237, .7);
+    animation: corePulse 2.4s ease-in-out infinite;
+}
+
+body.picard-theme .warp-core-inner {
+    width: 35%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 12px white;
+}
+
+body.picard-theme .warp-orbit {
+    position: absolute;
+    width: 66%;
+    height: 30%;
+    border: 1px solid rgba(84, 217, 237, .8);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(84, 217, 237, .22);
+}
+
+body.picard-theme .orbit-one {
+    transform: rotate(55deg);
+    animation: orbitSpin 8s linear infinite;
+}
+
+body.picard-theme .orbit-two {
+    transform: rotate(-55deg);
+    animation: orbitSpin 11s linear infinite reverse;
+}
+
+body.picard-theme .orbit-three {
+    width: 78%;
+    height: 42%;
+    border-color: rgba(229, 163, 108, .75);
+    transform: rotate(90deg);
+    animation: orbitSpin 14s linear infinite;
+}
+
+body.picard-theme .warp-scanline {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #8cecff;
+    opacity: .7;
+    box-shadow: 0 0 10px #54d9ed;
+    animation: scanDown 4s linear infinite;
+}
+
+body.picard-theme .warp-coordinate {
+    position: absolute;
+    color: #5f9aaf;
+    font: .43rem monospace;
+    letter-spacing: .03em;
+}
+
+body.picard-theme .coord-one { top: 5%; left: 4%; }
+body.picard-theme .coord-two { bottom: 20%; left: 4%; }
+body.picard-theme .coord-three { right: 3%; bottom: 5%; }
+
+/* Readouts and meters */
+
+body.picard-theme .warp-readout,
+body.picard-theme .phaser-readout {
+    display: flex;
+    flex-direction: column;
+    gap: .55rem;
+    margin-top: .7rem;
+}
+
+body.picard-theme .warp-readout div {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    padding-bottom: .35rem;
+    border-bottom: 1px solid rgba(84, 217, 237, .12);
+}
+
+body.picard-theme .warp-readout span,
+body.picard-theme .phaser-readout span {
+    color: #6d9aaf;
+    font: .48rem monospace;
+    letter-spacing: .04em;
+}
+
+body.picard-theme .warp-readout strong,
+body.picard-theme .phaser-readout strong {
+    color: #a8f3ff;
+    font: .66rem monospace;
+    overflow-wrap: anywhere;
+}
+
+body.picard-theme .warp-meter {
+    height: 4px;
+    margin-top: .7rem;
+    background: #132b36;
+}
+
+body.picard-theme .warp-meter span {
+    display: block;
+    width: 98.4%;
+    height: 100%;
+    background: #54d9ed;
+    box-shadow: 0 0 8px #54d9ed;
+    animation: meterFlicker 3s ease-in-out infinite;
+}
+
+body.picard-theme .diagnostic-foot {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    margin-top: .65rem;
+    color: #6892a6;
+    font: .45rem monospace;
+}
+
+/* Phaser bank */
+
+body.picard-theme .phaser-panel {
+    margin-top: 0;
+    border-color: rgba(229, 163, 108, .4);
+    background: linear-gradient(160deg, #30251f, #0b0d12 75%);
+}
+
+body.picard-theme .phaser-title h2 {
+    color: #f0bd8f;
+    font-size: .7rem;
+    line-height: 1.5;
+}
+
+body.picard-theme .phaser-title .standby {
+    color: #efbd8c;
+}
+
+body.picard-theme .phaser-title .standby > span {
+    background: #e5a36c;
+    box-shadow: 0 0 8px #e5a36c;
+}
+
+body.picard-theme .phaser-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 250px;
+    margin-top: .7rem;
+    overflow: hidden;
+    border: 1px solid rgba(229, 163, 108, .25);
+    background: #090d12;
+}
+
+body.picard-theme .phaser-grid {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(rgba(229, 163, 108, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(229, 163, 108, .08) 1px, transparent 1px);
+    background-size: 9px 9px;
+}
+
+body.picard-theme .phaser-emitter {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 58%;
+    height: 12%;
+    border: 1px solid #b5794f;
+    background: linear-gradient(90deg, #432c20, #d68e54, #543322);
+    box-shadow: inset 0 0 8px rgba(255, 191, 130, .25);
+}
+
+body.picard-theme .phaser-emitter span {
+    width: 80%;
+    height: 3px;
+    background: #ffcb96;
+    box-shadow: 0 0 7px #ff9d52;
+    animation: emitterCharge 2s ease-in-out infinite;
+}
+
+body.picard-theme .emitter-b span { animation-delay: -.5s; }
+body.picard-theme .emitter-c span { animation-delay: -1s; }
+body.picard-theme .emitter-d span { animation-delay: -1.5s; }
+
+body.picard-theme .phaser-beam {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ffb36f;
+    box-shadow: 0 0 9px #ff9d52;
+    opacity: .7;
+    animation: phaserSweep 3.5s ease-in-out infinite alternate;
+}
+
+body.picard-theme .phaser-sweep {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 188, 126, .8);
+    box-shadow: 0 0 8px #ff9d52;
+    animation: scanDown 5s linear infinite;
+}
+
+body.picard-theme .phaser-readout {
+    gap: .35rem;
+    margin-top: .8rem;
+}
+
+body.picard-theme .phaser-readout strong {
+    margin-bottom: .3rem;
+    color: #f0bd8f;
+    font-size: .58rem;
+}
+
+body.picard-theme .phaser-energy {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+    margin-top: .8rem;
+}
+
+body.picard-theme .phaser-energy span {
+    height: 5px;
+    background: #9b5d36;
+    animation: energyPulse 1.8s ease-in-out infinite;
+}
+
+body.picard-theme .phaser-energy span:nth-child(2n) {
+    animation-delay: -.9s;
+}
+
+@keyframes corePulse {
+    0%, 100% { transform: scale(.94); filter: brightness(.9); }
+    50% { transform: scale(1.05); filter: brightness(1.35); }
+}
+
+@keyframes orbitSpin {
+    from { rotate: 0deg; }
+    to { rotate: 360deg; }
+}
+
+@keyframes scanDown {
+    from { top: 0; }
+    to { top: 100%; }
+}
+
+@keyframes emitterCharge {
+    0%, 100% { opacity: .45; transform: scaleX(.75); }
+    50% { opacity: 1; transform: scaleX(1); }
+}
+
+@keyframes phaserSweep {
+    from { left: 15%; }:root[data-theme="picard"]
+    to { left: 85%; }
+}
+
+@keyframes energyPulse {
+    0%, 100% { opacity: .35; }
+    50% { opacity: 1; background: #ffb36f; }
+}
+
+@keyframes meterFlicker {
+    0%, 100% { opacity: 1; }
+    48% { opacity: .85; }
+    50% { opacity: .65; }
+    52% { opacity: 1; }
+}
+
+@keyframes statusBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .35; }
+}
+
+@media (max-width: 1100px) {
+    body.picard-theme .lcars-layout {
+        grid-template-columns: 160px minmax(0, 1fr) 78px;
+        gap: .6rem;
+    }
+}
+
+@media (max-width: 760px) {
+    body.picard-theme .lcars-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    body.picard-theme .lcars-left-column {
+        display: contents;
+    }
+
+    body.picard-theme .warp-panel {
+        display: none;
+    }
+
+    body.picard-theme .phaser-panel {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.picard-theme .warp-panel *,
+    body.picard-theme .phaser-panel *,
+    body.picard-theme .warp-panel *::before,
+    body.picard-theme .phaser-panel *::before {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* PICARD: Theme-Switch Panel */
+body.picard-theme .theme-switch-container {
+    background: linear-gradient(
+        135deg,
+        #16394a 0%,
+        #17677c 48%,
+        #142b42 100%
+    );
+
+    border-color: #54d9ed;
+
+    box-shadow:
+        inset 0 0 0 2px rgba(84, 217, 237, 0.10),
+        0 0 14px rgba(84, 217, 237, 0.20);
+
+    color: #d8f7ff;
+}
+
+body.picard-theme .theme-switch-container .theme-slider {
+    background-color: #07131d;
+    border-color: #54d9ed;
+}
+
+body.picard-theme .theme-switch-container .theme-slider::before {
+    background-color: #54d9ed;
+    box-shadow: 0 0 8px rgba(84, 217, 237, 0.55);
+}
+
+
+/* =========================================
+   PICARD — THEME SELECTOR
+   ========================================= */
+
+body.picard-theme .theme-switch-container {
+    background: #142b42;
+    box-shadow: 0 0 14px rgba(84, 217, 237, 0.18);
+}
+
+body.picard-theme .theme-switch-container button {
+    color: #b9dce8;
+}
+
+body.picard-theme .theme-switch-container button:hover {
+    background: #204558;
+}
+
+body.picard-theme .theme-switch-container button.active {
+    background: #17677c;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 1px #54d9ed;
+}
+
+body.picard-theme .theme-switch-container button:focus-visible {
+    outline-color: #54d9ed;
+}
+

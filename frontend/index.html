@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LCARS Media System</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/picard.css">
+    <link rel="stylesheet" href="css/klingon.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <script src="js/app.js" defer></script>
 </head>
 <body>
     <div class="lcars-app">
+       
         <header class="lcars-header">
             <div class="lcars-brand">
                 <span class="brand-label">LCARS</span>
@@ -20,18 +28,68 @@
                 <span>PERSONAL MEDIA DATABASE</span>
                 <span class="system-status">SYSTEM ONLINE</span>
             </div>
+
+            <!-- Theme-Switch -->           
+                <div class="theme-switch-container" aria-label="Design auswählen">
+                    <button type="button" data-theme-option="tng" class="active"
+                        aria-pressed="true">TNG</button>
+
+                    <button type="button" data-theme-option="picard"
+                        aria-pressed="false">PICARD</button>
+
+                    <button type="button" data-theme-option="klingon"
+                        aria-pressed="false">KLINGON</button>
+                </div>
         </header>
 
-        <div class="lcars-layout">
-            <nav class="lcars-navigation">
-                <button class="nav-button active" data-section="home">HOME</button>
-                <button class="nav-button" data-section="movies">MOVIES</button>
-                <button class="nav-button" data-section="series">SERIES</button>
-                <button class="nav-button" data-section="music">MUSIC</button>
-                <button class="nav-button" data-section="photos">PHOTOS</button>
-                <button class="nav-button" data-section="data">DATA</button>
-                <button class="nav-button" data-section="search">SEARCH</button>
-            </nav>
+        
+<div class="lcars-layout">
+
+    <div class="lcars-left-column">
+        <nav class="lcars-navigation">
+            <button class="nav-button active" data-section="home">HOME</button>
+            <button class="nav-button" data-section="movies">MOVIES</button>
+            <button class="nav-button" data-section="series">SERIES</button>
+            <button class="nav-button" data-section="music">MUSIC</button>
+            <button class="nav-button" data-section="photos">PHOTOS</button>
+            <button class="nav-button" data-section="data">DATA</button>
+            <button class="nav-button" data-section="search">SEARCH</button>
+        </nav>
+
+        <!-- WARP CORE MONITOR -->
+        <aside class="diagnostic-panel warp-panel" aria-label="Warpkern-Anzeige">
+            <div class="diagnostic-heading">
+                <div>
+                    <span class="diagnostic-index">ENG-01 / REACTOR</span>
+                    <h2>WARP CORE</h2>
+                </div>
+                <span class="diagnostic-state"><span></span> ONLINE</span>
+            </div>
+
+            <div class="warp-visual">
+                <div class="warp-orbit orbit-one"></div>
+                <div class="warp-orbit orbit-two"></div>
+                <div class="warp-orbit orbit-three"></div>
+                <div class="warp-core">
+                    <div class="warp-core-inner"></div>
+                </div>
+                <div class="warp-scanline"></div>
+                <span class="warp-coordinate coord-one">NACELLE 01</span>
+                <span class="warp-coordinate coord-two">MATTER</span>
+                <span class="warp-coordinate coord-three">ANTIMATTER</span>
+            </div>
+
+            <div class="warp-readout">
+                <div><span>CORE OUTPUT</span><strong id="warp-output">98.4%</strong></div>
+                <div><span>PLASMA FLOW</span><strong>OPTIMAL</strong></div>
+                <div><span>FIELD STABILITY</span><strong>99.8%</strong></div>
+            </div>
+            <div class="warp-meter"><span></span></div>
+            <div class="diagnostic-foot">
+                <span>EPS GRID</span><span>● NOMINAL</span>
+            </div>
+        </aside>
+    </div>
 
             <main class="lcars-content">
                 <section id="home" class="content-section">
@@ -144,7 +202,43 @@
                     LCARS MEDIA SYSTEM <span>PROTOTYPE 0.1</span>
                 </footer>
             </main>
-        </div>
+            
+            <!-- PHASER ARRAY CONTROL -->
+            <aside class="diagnostic-panel phaser-panel" aria-label="Phaserbank-Anzeige">
+                <div class="phaser-title">
+                    <span class="diagnostic-index">TACTICAL / 02</span>
+                    <h2>PHASER ARRAY</h2>
+                    <span class="diagnostic-state standby"><span></span> STANDBY</span>
+                </div>
+
+                <div class="phaser-visual">
+                    <div class="phaser-grid"></div>
+                    <div class="phaser-emitter emitter-a"><span></span></div>
+                    <div class="phaser-emitter emitter-b"><span></span></div>
+                    <div class="phaser-emitter emitter-c"><span></span></div>
+                    <div class="phaser-emitter emitter-d"><span></span></div>
+                    <div class="phaser-beam"></div>
+                    <div class="phaser-sweep"></div>
+                </div>
+
+                <div class="phaser-readout">
+                    <span>EMITTER STATUS</span>
+                    <strong>4 / 4 READY</strong>
+                    <span>ARRAY COORDINATES</span>
+                    <strong>042.7 / 118.2</strong>
+                    <span>ENERGY RESERVE</span>
+                    <strong>76.2%</strong>
+                </div>
+
+                <div class="phaser-energy">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="diagnostic-foot">
+                    <span>SECURITY GRID</span><span>LOCKED</span>
+                </div>
+            </aside>
+        </div>    
     </div>
 </body>
 </html>

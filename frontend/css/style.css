@@ -359,3 +359,98 @@ h2 {
         min-height: 110px;
     }
 }
+
+
+
+/* LCARS Theme-Switch Panel */
+
+/* =========================================
+   LCARS THEME SELECTOR — TNG DEFAULT
+   ========================================= */
+
+.theme-switch-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px;
+    background: #b5a0d4;
+    border: none;
+    border-radius: 18px 4px 18px 4px;
+}
+
+.theme-switch-container button {
+    padding: 9px 12px;
+    border: none;
+    border-radius: 12px 3px 12px 3px;
+    background: transparent;
+    color: #222;
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.theme-switch-container button:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.theme-switch-container button.active {
+    background: #f0c66e;
+    color: #000000;
+}
+
+.theme-switch-container button:focus-visible {
+    outline: 2px solid #222;
+    outline-offset: 2px;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #555;
+    border: 2px solid currentColor;
+    border-radius: 22px;
+    transition: 0.2s;
+}
+
+.theme-slider::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: currentColor;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.theme-switch input:checked + .theme-slider::before {
+    transform: translateX(20px);
+}
+
+.theme-switch input:focus-visible + .theme-slider {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+

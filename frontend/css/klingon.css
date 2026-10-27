@@ -1,0 +1,1057 @@
+/* =========================================
+   KLINGON — TACTICAL INTERFACE
+   Grunddesign der gesamten Oberfläche
+   ========================================= */ 
+
+body.klingon-theme {
+    background: #080608;
+    color: #eadede;
+    color-scheme: dark;
+
+    --klingon-black: #080608;
+    --klingon-panel: #160b0e;
+    --klingon-panel-light: #241014;
+    --klingon-red: #a20f20;
+    --klingon-red-bright: #ed2939;
+    --klingon-red-dark: #4b0b14;
+    --klingon-text: #eadede;
+    --klingon-muted: #b38d91;
+    --klingon-warning: #ff9b45;
+}
+
+/* Gesamter Anwendungsbereich */
+body.klingon-theme .lcars-app {
+    background: var(--klingon-black);
+    color: var(--klingon-text);
+}
+
+/* Kopfbereich */
+body.klingon-theme .lcars-header {
+    background: #0d080a;
+    border-bottom: 3px solid var(--klingon-red);
+}
+
+body.klingon-theme .lcars-brand .brand-label {
+    color: var(--klingon-red-bright);
+}
+
+body.klingon-theme .lcars-brand .brand-subtitle,
+body.klingon-theme .header-panel {
+    color: var(--klingon-muted);
+}
+
+body.klingon-theme .system-status {
+    color: var(--klingon-red-bright);
+}
+
+/* Navigation */
+body.klingon-theme .lcars-navigation {
+    background: transparent;
+}
+
+body.klingon-theme .nav-button {
+    background: var(--klingon-panel);
+    color: var(--klingon-muted);
+    border: none;
+    border-left: 4px solid var(--klingon-red-dark);
+    border-radius: 0;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+body.klingon-theme .nav-button:hover {
+    background: var(--klingon-panel-light);
+    color: #ffffff;
+    border-left-color: var(--klingon-red-bright);
+}
+
+body.klingon-theme .nav-button.active {
+    background: var(--klingon-red);
+    color: #ffffff;
+    border-left-color: #ff6670;
+    box-shadow: inset 0 0 14px rgba(237, 41, 57, 0.15);
+}
+
+/* Hauptbereich */
+body.klingon-theme .lcars-content {
+    background: var(--klingon-black);
+    color: var(--klingon-text);
+}
+
+body.klingon-theme .lcars-content h1,
+body.klingon-theme .lcars-content h2 {
+    color: #f2d9dc;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+body.klingon-theme .lcars-content h1 {
+    border-bottom: 2px solid var(--klingon-red);
+    padding-bottom: 0.55rem;
+}
+
+body.klingon-theme .section-description {
+    color: var(--klingon-muted);
+}
+
+/* Hauptnachricht */
+body.klingon-theme .feature-panel {
+    background: var(--klingon-panel);
+    color: var(--klingon-text);
+    border: none;
+    border-left: 5px solid var(--klingon-red);
+    border-radius: 0;
+    box-shadow: inset 0 0 24px rgba(162, 15, 32, 0.08);
+}
+
+body.klingon-theme .feature-panel .panel-label {
+    color: var(--klingon-red-bright);
+}
+
+body.klingon-theme .feature-panel h2 {
+    color: #ffffff;
+}
+
+/* Medienkarten */
+body.klingon-theme .media-card {
+    background: #10090b;
+    color: var(--klingon-text);
+    border: none;
+    border-bottom: 3px solid var(--klingon-red-dark);
+    border-radius: 0;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+body.klingon-theme .media-card:hover {
+    background: var(--klingon-panel-light);
+    border-bottom-color: var(--klingon-red-bright);
+    transform: translateY(-2px);
+}
+
+body.klingon-theme .media-number {
+    color: var(--klingon-red-bright);
+}
+
+body.klingon-theme .media-title {
+    color: #ffffff;
+}
+
+body.klingon-theme .media-description {
+    color: var(--klingon-muted);
+}
+
+/* Eingabefelder, z. B. Suche */
+body.klingon-theme input,
+body.klingon-theme textarea,
+body.klingon-theme select {
+    background: #10090b;
+    color: var(--klingon-text);
+    border: 1px solid var(--klingon-red-dark);
+    border-radius: 0;
+}
+
+body.klingon-theme input:focus,
+body.klingon-theme textarea:focus,
+body.klingon-theme select:focus {
+    outline: 1px solid var(--klingon-red-bright);
+    border-color: var(--klingon-red-bright);
+}
+
+/* Fußzeile */
+body.klingon-theme .lcars-footer {
+    background: #0d080a;
+    color: var(--klingon-muted);
+    border-top: 2px solid var(--klingon-red-dark);
+}
+
+body.klingon-theme .lcars-footer span {
+    color: var(--klingon-red-bright);
+}
+
+/* Tastaturbedienung */
+body.klingon-theme button:focus-visible {
+    outline: 2px solid var(--klingon-red-bright);
+    outline-offset: 3px;
+}
+
+/* Animationen bei reduzierter Bewegung respektieren */
+@media (prefers-reduced-motion: reduce) {
+    body.klingon-theme *,
+    body.klingon-theme *::before,
+    body.klingon-theme *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================
+   KLINGON — HEADER OVERRIDE
+   ========================================= */
+
+body.klingon-theme .lcars-header {
+    background: #0b0709;
+    color: #eadede;
+    border-bottom: 3px solid #a20f20;
+    box-shadow: 0 4px 16px rgba(162, 15, 32, 0.15);
+}
+
+/* LCARS-Logo und Untertitel */
+body.klingon-theme .lcars-brand {
+    background: #26080c;
+    color: #ed2939;
+}
+
+body.klingon-theme .lcars-brand .brand-label {
+    color: #ed2939;
+}
+
+body.klingon-theme .lcars-brand .brand-subtitle {
+    color: #b38d91;
+}
+
+/* Mittlerer Header-Bereich */
+body.klingon-theme .header-panel {
+    background: #160b0e;
+    color: #eadede;
+}
+
+body.klingon-theme .header-panel span {
+    color: #d6bfc2;
+}
+
+body.klingon-theme .header-panel .system-status {
+    color: #ff404b;
+}
+
+/* Theme-Auswahl im Header */
+body.klingon-theme .theme-switch-container {
+    background: #26080c;
+    box-shadow:
+        inset 0 0 12px rgba(160, 0, 20, 0.18),
+        0 0 12px rgba(180, 0, 20, 0.15);
+}
+
+body.klingon-theme .theme-switch-container button {
+    color: #c77b7b;
+}
+
+body.klingon-theme .theme-switch-container button.active {
+    background: #a20f20;
+    color: #ffffff;
+    box-shadow: 0 0 8px rgba(220, 0, 30, 0.28);
+}
+
+
+/* KLINGON — System Status Panel */
+body.klingon-theme .system-status {
+    display: inline-block;
+    background: #26080c;
+    color: #ff404b;
+    border: none;
+    border-radius: 0;
+    padding: 8px 12px;
+    box-shadow: inset 3px 0 0 #a20f20;
+    text-shadow: 0 0 6px rgba(255, 64, 75, 0.35);
+}
+
+/* Falls der Status über ein Pseudo-Element dekoriert wird */
+body.klingon-theme .system-status::before,
+body.klingon-theme .system-status::after {
+    border-color: #a20f20;
+    background-color: transparent;
+}
+
+
+/* =========================================
+   KLINGON — TACTICAL TYPOGRAPHY
+   ========================================= */
+
+/* Markante Schrift für Überschriften und Status */
+body.klingon-theme .lcars-brand .brand-label,
+body.klingon-theme .lcars-brand .brand-subtitle,
+body.klingon-theme .header-panel,
+body.klingon-theme .system-status,
+body.klingon-theme .nav-button,
+body.klingon-theme .lcars-content h1,
+body.klingon-theme .lcars-content h2,
+body.klingon-theme .panel-label,
+body.klingon-theme .media-title,
+body.klingon-theme .media-number,
+body.klingon-theme .lcars-footer,
+body.klingon-theme .theme-switch-container button {
+    font-family: "Orbitron", sans-serif;
+}
+
+/* Überschriften: kompakt und taktisch */
+body.klingon-theme .lcars-content h1 {
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+body.klingon-theme .lcars-content h2 {
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* Statusanzeigen */
+body.klingon-theme .system-status,
+body.klingon-theme .media-number,
+body.klingon-theme .panel-label {
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+/* Navigation */
+body.klingon-theme .nav-button {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   KLINGON — TACTICAL CONSOLES
+   ========================================= */
+
+/* Dreispaltiges Kampfbrücken-Layout */
+body.klingon-theme .lcars-layout {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr) 92px;
+    align-items: start;
+    gap: 1rem;
+}
+
+body.klingon-theme .lcars-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    min-width: 0;
+}
+
+/* Konsolen im Klingonen-Theme einblenden */
+body.klingon-theme .warp-panel,
+body.klingon-theme .phaser-panel {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    padding: 0.65rem;
+    background: #100609;
+    color: #eadede;
+    border: 1px solid #68101b;
+    border-radius: 2px;
+    box-shadow:
+        inset 0 0 22px rgba(162, 15, 32, 0.10),
+        0 0 12px rgba(162, 15, 32, 0.08);
+    font-family: Arial, sans-serif;
+}
+
+/* Konsolenüberschriften */
+body.klingon-theme .diagnostic-heading,
+body.klingon-theme .phaser-title {
+    color: #ed2939;
+}
+
+body.klingon-theme .diagnostic-heading h2,
+body.klingon-theme .phaser-title h2 {
+    color: #ff6670;
+    font-family: "Orbitron", sans-serif;
+    font-size: 0;
+    width: 100%;
+    min-width: 0;
+}
+
+body.klingon-theme .diagnostic-index {
+    color: #b76b74;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+}
+
+body.klingon-theme .diagnostic-state {
+    color: #ff6670;
+    font-size: 0.6rem;
+}
+
+body.klingon-theme .diagnostic-state > span {
+    background: #ed2939;
+    box-shadow: 0 0 7px #ed2939;
+}
+
+/* Warpkern: dunkles Reaktorfenster */
+body.klingon-theme .warp-visual {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle,
+            rgba(237, 41, 57, 0.16),
+            transparent 65%
+        ),
+        #080406;
+    border: 1px solid #451017;
+    aspect-ratio: 1 / 1;
+}
+
+body.klingon-theme .warp-orbit {
+    border-color: rgba(237, 41, 57, 0.65);
+    box-shadow: 0 0 8px rgba(237, 41, 57, 0.12);
+}
+
+body.klingon-theme .warp-core {
+    background: radial-gradient(
+        circle,
+        #fff0dc 0%,
+        #ff5b38 18%,
+        #b20c20 45%,
+        #30050b 75%,
+        transparent 100%
+    );
+    box-shadow: 0 0 18px rgba(237, 41, 57, 0.5);
+}
+
+body.klingon-theme .warp-core-inner {
+    background: #ffb3a0;
+    box-shadow: 0 0 14px #ff404b;
+}
+
+body.klingon-theme .warp-scanline {
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 50, 70, 0.7),
+        transparent
+    );
+}
+
+body.klingon-theme .warp-coordinate {
+    color: #e85b68;
+    font-size: 0.48rem;
+}
+
+/* Werte unter dem Reaktor */
+body.klingon-theme .warp-readout,
+body.klingon-theme .phaser-readout {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 0.7rem;
+}
+
+body.klingon-theme .warp-readout div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+body.klingon-theme .warp-readout span,
+body.klingon-theme .phaser-readout span {
+    color: #b76b74;
+    font-size: 0.55rem;
+    letter-spacing: 0.5px;
+}
+
+body.klingon-theme .warp-readout strong,
+body.klingon-theme .phaser-readout strong {
+    color: #ff6670;
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.68rem;
+    overflow-wrap: anywhere;
+}
+
+body.klingon-theme .warp-meter {
+    height: 5px;
+    margin-top: 0.7rem;
+    background: #310b11;
+    overflow: hidden;
+}
+
+body.klingon-theme .warp-meter > span {
+    display: block;
+    width: 84%;
+    height: 100%;
+    background: #ed2939;
+    box-shadow: 0 0 8px #ed2939;
+}
+
+body.klingon-theme .diagnostic-foot {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 0.7rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #451017;
+    color: #b76b74;
+    font-size: 0.55rem;
+}
+
+/* Disruptor-Kontrolle */
+body.klingon-theme .phaser-visual {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    margin-top: 0.8rem;
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(162, 15, 32, 0.20),
+            transparent 70%
+        ),
+        #080406;
+    border: 1px solid #451017;
+}
+
+body.klingon-theme .phaser-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.55;
+    background-image:
+        linear-gradient(rgba(162, 15, 32, 0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(162, 15, 32, 0.22) 1px, transparent 1px);
+    background-size: 14px 14px;
+}
+
+body.klingon-theme .phaser-emitter {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #ff404b;
+    background: #24070c;
+    box-shadow: 0 0 8px rgba(237, 41, 57, 0.45);
+    transform: rotate(45deg);
+}
+
+body.klingon-theme .emitter-a {
+    top: 18%;
+    left: 18%;
+}
+
+body.klingon-theme .emitter-b {
+    top: 18%;
+    right: 18%;
+}
+
+body.klingon-theme .emitter-c {
+    bottom: 18%;
+    left: 18%;
+}
+
+body.klingon-theme .emitter-d {
+    bottom: 18%;
+    right: 18%;
+}
+
+body.klingon-theme .phaser-emitter > span {
+    position: absolute;
+    inset: 4px;
+    background: #ed2939;
+    box-shadow: 0 0 8px #ed2939;
+}
+
+/* Scanbewegung */
+body.klingon-theme .phaser-sweep {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff404b;
+    box-shadow: 0 0 12px #ed2939;
+    animation: klingonPhaserSweep 3s linear infinite;
+}
+
+@keyframes klingonPhaserSweep {
+    from { transform: translateY(0); }
+    to { transform: translateY(220px); }
+}
+
+/* Energie-Segmente */
+body.klingon-theme .phaser-energy {
+    display: flex;
+    gap: 3px;
+    margin-top: 0.8rem;
+}
+
+body.klingon-theme .phaser-energy span {
+    flex: 1;
+    height: 6px;
+    background: #ed2939;
+    box-shadow: 0 0 5px rgba(237, 41, 57, 0.35);
+}
+
+body.klingon-theme .phaser-energy span:nth-child(n+7) {
+    background: #451017;
+    box-shadow: none;
+}
+
+/* Schmale Bildschirme */
+@media (max-width: 1100px) {
+    body.klingon-theme .lcars-layout {
+        grid-template-columns: 160px minmax(0, 1fr) 78px;
+        gap: 0.7rem;
+    }
+}
+
+@media (max-width: 760px) {
+    body.klingon-theme .lcars-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    body.klingon-theme .lcars-left-column {
+        display: contents;
+    }
+
+    body.klingon-theme .warp-panel,
+    body.klingon-theme .phaser-panel {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.klingon-theme .phaser-sweep {
+        animation: none;
+    }
+}
+
+
+/* =========================================
+   KLINGON — TRACTOR BEAM MODULE
+   ========================================= */
+
+/* Überschrift ersetzen */
+body.klingon-theme .diagnostic-heading h2 {
+    font-size: 0;
+}
+
+body.klingon-theme .diagnostic-heading h2::after {
+    content: "TRACTOR BEAM";
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #ff6670;
+}
+
+/* Emitter-Kammer */
+body.klingon-theme .warp-visual {
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 45, 65, 0.2),
+            transparent 35%
+        ),
+        repeating-radial-gradient(
+            circle,
+            transparent 0 13px,
+            rgba(237, 41, 57, 0.12) 14px 15px
+        ),
+        #080406;
+    border: 1px solid #a20f20;
+}
+
+/* Bestehende Umlaufbahnen werden zu Energieringen */
+body.klingon-theme .warp-orbit {
+    border: 1px solid rgba(255, 64, 75, 0.75);
+    animation: tractorRingPulse 2.8s ease-in-out infinite;
+}
+
+body.klingon-theme .warp-orbit:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+body.klingon-theme .warp-orbit:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+/* Der Kern wird zum Traktorstrahl-Emitter */
+body.klingon-theme .warp-core {
+    background: radial-gradient(
+        circle,
+        #fff4e8 0%,
+        #ff9a72 12%,
+        #ed2939 32%,
+        rgba(162, 15, 32, 0.7) 55%,
+        transparent 75%
+    );
+    animation: tractorCorePulse 1.8s ease-in-out infinite;
+}
+
+body.klingon-theme .warp-core-inner {
+    background: #fff0df;
+    box-shadow:
+        0 0 10px #ff404b,
+        0 0 24px #ed2939;
+    animation: tractorInnerPulse 1.8s ease-in-out infinite;
+}
+
+/* Energiescan */
+body.klingon-theme .warp-scanline {
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 64, 75, 0.9),
+        transparent
+    );
+    animation: tractorScan 2.4s linear infinite;
+}
+
+/* Animationen */
+@keyframes tractorCorePulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(0.82);
+        filter: brightness(0.8);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        filter: brightness(1.5);
+    }
+}
+
+@keyframes tractorInnerPulse {
+    0%, 100% {
+        opacity: 0.65;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes tractorRingPulse {
+    0%, 100% {
+        opacity: 0.45;
+        transform: scale(0.94);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.04);
+    }
+}
+
+@keyframes tractorScan {
+    from { transform: translateY(-100%); }
+    to   { transform: translateY(200%); }
+}
+
+
+/* =========================================
+   KLINGON — DISRUPTOR SYSTEM
+   ========================================= */
+
+/* Überschrift ersetzen */
+body.klingon-theme .phaser-title h2 {
+    font-size: 0;
+}
+
+body.klingon-theme .phaser-title h2::after {
+    content: "DISRUPTOR";
+    display: block;
+    width: 125%;
+    color: #ff6670;
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    white-space: nowrap;
+    transform: scaleX(0.8);
+    transform-origin: left center;
+}
+
+/* Ziel- und Ladeanzeige */
+body.klingon-theme .phaser-visual {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(237, 41, 57, 0.24),
+            transparent 55%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 49%,
+            rgba(237, 41, 57, 0.25) 50%,
+            transparent 51%
+        ),
+        #080406;
+    border-color: #a20f20;
+}
+
+/* Gitter wird zur Zielerfassung */
+body.klingon-theme .phaser-grid {
+    background-image:
+        linear-gradient(rgba(237, 41, 57, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(237, 41, 57, 0.2) 1px, transparent 1px);
+    background-size: 12px 12px;
+    animation: disruptorGridPulse 3s ease-in-out infinite;
+}
+
+/* Disruptor-Läufe laden Energie auf */
+body.klingon-theme .phaser-emitter {
+    width: 19px;
+    height: 19px;
+    border: 2px solid #ff6670;
+    background: #26080c;
+    box-shadow:
+        0 0 8px rgba(237, 41, 57, 0.5),
+        inset 0 0 6px rgba(237, 41, 57, 0.4);
+    animation: disruptorCharge 1.6s ease-in-out infinite;
+}
+
+body.klingon-theme .emitter-b {
+    animation-delay: 0.2s;
+}
+
+body.klingon-theme .emitter-c {
+    animation-delay: 0.4s;
+}
+
+body.klingon-theme .emitter-d {
+    animation-delay: 0.6s;
+}
+
+body.klingon-theme .phaser-emitter > span {
+    background: #ff404b;
+    box-shadow:
+        0 0 8px #ed2939,
+        0 0 16px #ed2939;
+    animation: disruptorCore 1.6s ease-in-out infinite;
+}
+
+/* Der Schussimpuls läuft durch die Konsole */
+body.klingon-theme .phaser-sweep {
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ff9b45,
+        #fff0df,
+        #ff404b,
+        transparent
+    );
+    box-shadow:
+        0 0 8px #ed2939,
+        0 0 18px #ff404b;
+    animation: disruptorFire 2.8s ease-in-out infinite;
+}
+
+/* Energieanzeige */
+body.klingon-theme .phaser-energy span {
+    background: #ed2939;
+    animation: disruptorEnergy 2.8s ease-in-out infinite;
+}
+
+body.klingon-theme .phaser-energy span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+body.klingon-theme .phaser-energy span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+body.klingon-theme .phaser-energy span:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+body.klingon-theme .phaser-energy span:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+body.klingon-theme .phaser-energy span:nth-child(6) {
+    animation-delay: 0.75s;
+}
+
+/* Animationen */
+@keyframes disruptorCharge {
+    0%, 100% {
+        filter: brightness(0.7);
+        box-shadow: 0 0 5px rgba(237, 41, 57, 0.3);
+    }
+    50% {
+        filter: brightness(1.7);
+        box-shadow:
+            0 0 12px #ed2939,
+            0 0 22px rgba(237, 41, 57, 0.65);
+    }
+}
+
+@keyframes disruptorCore {
+    0%, 100% { transform: scale(0.8); }
+    50% { transform: scale(1.25); }
+}
+
+@keyframes disruptorFire {
+    0%, 15% { transform: translateY(0); opacity: 0.15; }
+    35%, 55% { opacity: 1; }
+    85%, 100% { transform: translateY(220px); opacity: 0.1; }
+}
+
+@keyframes disruptorGridPulse {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 0.75; }
+}
+
+@keyframes disruptorEnergy {
+    0%, 20%, 100% { opacity: 0.45; }
+    45%, 70% {
+        opacity: 1;
+        box-shadow: 0 0 8px #ed2939;
+    }
+}
+
+/* Animationen bei entsprechender Systemeinstellung abschalten */
+@media (prefers-reduced-motion: reduce) {
+    body.klingon-theme .warp-orbit,
+    body.klingon-theme .warp-core,
+    body.klingon-theme .warp-core-inner,
+    body.klingon-theme .warp-scanline,
+    body.klingon-theme .phaser-grid,
+    body.klingon-theme .phaser-emitter,
+    body.klingon-theme .phaser-emitter > span,
+    body.klingon-theme .phaser-sweep,
+    body.klingon-theme .phaser-energy span {
+        animation: none;
+    }
+}
+
+
+/* =========================================
+   KLINGON — TRACTOR BEAM: LARGE ANIMATION
+   ========================================= */
+
+body.klingon-theme .warp-visual {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 240px;
+    aspect-ratio: 1 / 1;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 45, 65, 0.2),
+            transparent 55%
+        ),
+        #080406;
+}
+
+/* Breiter, pulsierender Strahl */
+body.klingon-theme .warp-visual::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 8%;
+    left: 50%;
+    width: 74%;
+    height: 84%;
+    transform: translateX(-50%);
+    transform-origin: center;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 240, 223, 0.05),
+        rgba(255, 64, 75, 0.18) 20%,
+        rgba(237, 41, 57, 0.48) 50%,
+        rgba(255, 64, 75, 0.18) 80%,
+        rgba(255, 240, 223, 0.05)
+    );
+    clip-path: polygon(40% 0, 60% 0, 100% 100%, 0 100%);
+    filter: drop-shadow(0 0 12px #ed2939);
+    animation: tractorBeamFlow 2.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Große, nach außen laufende Energiewellen */
+body.klingon-theme .warp-visual::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    width: 24%;
+    aspect-ratio: 1;
+    border: 2px solid #ff6670;
+    border-radius: 50%;
+    box-shadow:
+        0 0 12px rgba(237, 41, 57, 0.8),
+        inset 0 0 12px rgba(237, 41, 57, 0.45);
+    transform: translate(-50%, -50%);
+    animation: tractorWave 2s ease-out infinite;
+    pointer-events: none;
+}
+
+/* Den Emitter über dem Strahl halten */
+body.klingon-theme .warp-core {
+    z-index: 2;
+    transform-origin: center;
+    animation: tractorCorePulse 1.5s ease-in-out infinite;
+}
+
+/* Vorhandene Ringe stärker pulsieren lassen */
+body.klingon-theme .warp-orbit {
+    z-index: 2;
+    animation: tractorRingPulse 2s ease-in-out infinite;
+}
+
+/* Animationen */
+@keyframes tractorBeamFlow {
+    0%, 100% {
+        opacity: 0.35;
+        transform: translateX(-50%) scaleX(0.72);
+        filter: brightness(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scaleX(1.15);
+        filter: brightness(1.6);
+    }
+}
+
+@keyframes tractorWave {
+    0% {
+        width: 18%;
+        opacity: 1;
+    }
+    80% {
+        width: 95%;
+        opacity: 0.15;
+    }
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}
+
+/* Auf kleineren Displays keine übergroße Mindesthöhe erzwingen */
+@media (max-width: 760px) {
+    body.klingon-theme .warp-visual {
+        min-height: 180px;
+    }
+}
+
+/* Barrierefreiheit */
+@media (prefers-reduced-motion: reduce) {
+    body.klingon-theme .warp-visual::before,
+    body.klingon-theme .warp-visual::after {
+        animation: none;
+    }
+}
+
+
+/* Zentrierung des Traktorstrahl-Emitters korrigieren */
+body.klingon-theme .warp-core {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transform-origin: center center;
+}
+
+@keyframes tractorCorePulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(0.82);
+        filter: brightness(0.8);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        filter: brightness(1.5);
+    }
+}
